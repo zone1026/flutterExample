@@ -10,6 +10,9 @@ import 'package:my_app/text.dart';
 import 'package:my_app/icon.dart';
 import 'package:my_app/elevatedButton.dart';
 import 'package:my_app/scaffold.dart';
+import 'package:my_app/appBar.dart';
+import 'package:my_app/bottomNavigationBar.dart';
+import 'package:my_app/tabBar.dart';
 
 class YZHomeVc extends StatefulWidget {
   const YZHomeVc({Key? key}) : super(key: key);
@@ -37,6 +40,9 @@ class YZHomeState extends State<YZHomeVc> {
     listData.add("Icon");
     listData.add("ElevatedButton");
     listData.add("Scaffold");
+    listData.add("AppBar");
+    listData.add("BottomNavigationBar");
+    listData.add("TabBar");
 
     listData.add("Home");
 
@@ -154,6 +160,18 @@ class YZHomeState extends State<YZHomeVc> {
       case 7:
         {
           return const YZScaffoldWidget();
+        }
+      case 8:
+        {
+          return const YZAppBarWidget();
+        }
+      case 9:
+        {
+          return const YZBottomNavigationBarWidget();
+        }
+      case 10:
+        {
+          return const YZTabBarWidget();
         }
       default:
         return const YZHomeVc();
