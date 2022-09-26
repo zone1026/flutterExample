@@ -13,6 +13,8 @@ import 'package:my_app/scaffold.dart';
 import 'package:my_app/appBar.dart';
 import 'package:my_app/bottomNavigationBar.dart';
 import 'package:my_app/tabBar.dart';
+import 'package:my_app/tabBarView.dart';
+import 'package:my_app/materialApp.dart';
 
 class YZHomeVc extends StatefulWidget {
   const YZHomeVc({Key? key}) : super(key: key);
@@ -43,6 +45,8 @@ class YZHomeState extends State<YZHomeVc> {
     listData.add("AppBar");
     listData.add("BottomNavigationBar");
     listData.add("TabBar");
+    listData.add('TabBarView');
+    listData.add('MaterialApp');
 
     listData.add("Home");
 
@@ -172,6 +176,14 @@ class YZHomeState extends State<YZHomeVc> {
       case 10:
         {
           return const YZTabBarWidget();
+        }
+      case 11:
+        {
+          return const YZTabBarViewWidget();
+        }
+      case 12:
+        {
+          return const YZMaterialAppWidget();
         }
       default:
         return const YZHomeVc();

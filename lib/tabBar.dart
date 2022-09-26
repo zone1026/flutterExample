@@ -70,7 +70,14 @@ class YZTabBarState extends State<YZTabBarWidget> {
           title: const Text('TabBar'),
           bottom: _tabBar(),
         ),
-        body: Container(color: Colors.grey),
+        // 控制侧滑返回
+        body: WillPopScope(
+          // 是否允许页面退出（pop）
+          onWillPop: () async {
+            return true;
+          },
+          child: Container(color: Colors.grey),
+        ),
       ),
     );
   }
@@ -95,7 +102,7 @@ class YZTabBarState extends State<YZTabBarWidget> {
       labelStyle: const TextStyle(fontSize: 20.0),
       unselectedLabelColor: Colors.black,
       unselectedLabelStyle: const TextStyle(fontSize: 15.0),
-      padding: const EdgeInsets.only(top: 30.0, left: 35.0),
+      // padding: const EdgeInsets.only(top: 30.0, left: 35.0),
       onTap: (int index) {
         print("点击了 index = $index");
       },

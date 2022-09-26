@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'dart:ui' as OffsetBase;
 
 class YZAppBarWidget extends StatelessWidget {
   const YZAppBarWidget({Key? key}) : super(key: key);
@@ -20,18 +21,18 @@ class YZAppBarWidget extends StatelessWidget {
         ),
       ),
       // title 是否居中，
-      centerTitle: false,
+      centerTitle: true,
       // 使用 titleSpacing 来控制 title 的左侧偏移量
       titleSpacing: 32.0,
       actions: _actions(),
       flexibleSpace: _flexibleSpaceBar(),
       leading: _leading(context),
-      // bottom: _preferredSize(),
+      bottom: _preferredSize(),
       // backgroundColor: Colors.green,
       // 改变上方，电池、时间等图标颜色
       systemOverlayStyle: SystemUiOverlayStyle.light,
       // 改变 appbar 高度
-      toolbarHeight: 88.0,
+      // toolbarHeight: 88.0,
       // 改变appbar按钮透明度
       toolbarOpacity: 0.5,
       // iconTheme 改变按钮主题。
@@ -99,14 +100,15 @@ class YZAppBarWidget extends StatelessWidget {
     );
   }
 
-  // PreferredSize _preferredSize() {
-  //   return PreferredSize(
-  //       // preferredSize: Size.fromHeight(60.0),
-  //       child: Container(
-  //         color: Colors.green,
-  //         height: 60.0,
-  //       ));
-  // }
+  PreferredSize _preferredSize() {
+    return PreferredSize(
+        preferredSize: const Size.fromHeight(60.0),
+        child: Container(
+          color: Colors.green,
+          height: 60.0,
+          // child: const Text('Bottom'),
+        ));
+  }
 
   // iconTheme 改变按钮主题。
   IconThemeData _iconThemeData() {

@@ -21,12 +21,26 @@ class YZScaffoldState extends State<YZScaffoldWidget> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: _appBar(),
-      body: _body(),
+      body: WillPopScope(
+        child: _body(),
+        onWillPop: () async {
+          return true;
+        },
+      ),
       floatingActionButton: _floatingActionButton(),
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       persistentFooterButtons: _persistentFooterButtons(),
-      drawer: const Drawer(),
+      drawer: const Drawer(
+        backgroundColor: Colors.cyan,
+        width: 200.0,
+        child: Center(
+          child: Text(
+            'Drawer',
+            style: TextStyle(fontSize: 30.0, color: Colors.red),
+          ),
+        ),
+      ),
       endDrawer: const Drawer(),
       bottomNavigationBar: _bottomNavigationBar(),
       bottomSheet: _bottomSheet(),
