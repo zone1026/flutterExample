@@ -15,6 +15,8 @@ import 'package:my_app/bottomNavigationBar.dart';
 import 'package:my_app/tabBar.dart';
 import 'package:my_app/tabBarView.dart';
 import 'package:my_app/materialApp.dart';
+import 'package:my_app/floatingActionButton.dart';
+import 'package:my_app/route.dart';
 
 class YZHomeVc extends StatefulWidget {
   const YZHomeVc({Key? key}) : super(key: key);
@@ -47,6 +49,8 @@ class YZHomeState extends State<YZHomeVc> {
     listData.add("TabBar");
     listData.add('TabBarView');
     listData.add('MaterialApp');
+    listData.add('FloatingActionButton');
+    listData.add('Route');
 
     listData.add("Home");
 
@@ -184,6 +188,14 @@ class YZHomeState extends State<YZHomeVc> {
       case 12:
         {
           return const YZMaterialAppWidget();
+        }
+      case 13:
+        {
+          return const YZFloatingActionButtonWidget();
+        }
+      case 14:
+        {
+          return const YZRouteAppWidget();
         }
       default:
         return const YZHomeVc();

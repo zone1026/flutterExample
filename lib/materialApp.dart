@@ -24,7 +24,7 @@ class YZMaterialAppWidget extends StatelessWidget {
         '/settings': (context) => const YZMaterialAppSettingsWidget(),
         '/pop': (context) => const YZMaterialAppPopWidget(),
       },
-      // 触发了一个为定义的路由
+      // 触发了一个未定义的路由
       onUnknownRoute: (settings) {
         print('unknownRoute:$settings');
         return MaterialPageRoute(builder: (context) {
