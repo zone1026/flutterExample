@@ -1,7 +1,6 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:my_app/routeManager.dart';
 
 class YZRouteAppWidget extends StatelessWidget {
@@ -45,9 +44,9 @@ class YZRouteHomeState extends State<YZRouteHomeWidget> {
           "Route",
         ),
       ),
-      body: Container(
+      body: Material(
         color: Colors.white,
-        child: _listView(),
+        child: SafeArea(child: _listView()),
       ),
     );
   }
@@ -69,6 +68,7 @@ class YZRouteHomeState extends State<YZRouteHomeWidget> {
       itemCount: pageData.length,
       separatorBuilder: (BuildContext context, int index) {
         return const Divider(
+          height: 0.5,
           thickness: 0.5,
           color: Colors.grey,
           indent: 15.0,
@@ -77,6 +77,8 @@ class YZRouteHomeState extends State<YZRouteHomeWidget> {
       },
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
+          contentPadding: const EdgeInsets.only(
+              top: 8.0, left: 15.0, bottom: 8.0, right: 15.0),
           title: Text(pageData[index]),
           onTap: () {
             var routeName = pageData[index];

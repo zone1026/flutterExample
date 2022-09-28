@@ -5,9 +5,13 @@ import 'package:my_app/appBar.dart';
 import 'package:my_app/bottomNavigationBar.dart';
 import 'package:my_app/tabBar.dart';
 import 'package:my_app/tabBarView.dart';
+import 'package:my_app/buttonBar.dart';
 
 import 'package:my_app/floatingActionButton.dart';
 import 'package:my_app/elevatedButton.dart';
+import 'package:my_app/textButton.dart';
+import 'package:my_app/iconButton.dart';
+import 'package:my_app/popupMenuButtton.dart';
 
 class YZRouteManager {
   // 路由map表
@@ -19,20 +23,22 @@ class YZRouteManager {
   // 初始化注册路由
   YZRouteManager() {
     routeMap.addAll({'/': (context) => const YZRouteHomeWidget()});
-    routeMap.addAll(getBarRouteMap());
-    routeMap.addAll(getButtonMap());
+    routeMap.addAll(_getBarRouteMap());
+    routeMap.addAll(_getButtonMap());
   }
+
+// ***************** public method ***************** //
 
   // 自定义路由
   MaterialPageRoute routeWithSetting(RouteSettings settings) {
     // 拦截未登录路由
     if (_isLogin == false) {
-      return loginRoute(settings);
+      return _loginRoute(settings);
     }
 
     // 拦截其他情况路由
     if (_otherJudge == false) {
-      return ohterRoute(settings);
+      return _ohterRoute(settings);
     }
 
     WidgetBuilder? builder = routeMap[settings.name];
@@ -50,33 +56,40 @@ class YZRouteManager {
         builder: ((BuildContext context) => const Scaffold()));
   }
 
+// ***************** private method ***************** //
+
   // 配置bar相关路由
-  Map<String, WidgetBuilder> getBarRouteMap() {
+  Map<String, WidgetBuilder> _getBarRouteMap() {
     return {
-      '/appBar': (context) => const YZAppBarWidget(),
-      '/bottomNavigationBar': (context) => const YZBottomNavigationBarWidget(),
-      '/tabBar': (context) => const YZTabBarWidget(),
-      '/tabBarView': (context) => const YZTabBarViewWidget(),
+      '/bar/appBar': (context) => const YZAppBarWidget(),
+      '/bar/bottomNavigationBar': (context) =>
+          const YZBottomNavigationBarWidget(),
+      '/bar/tabBar': (context) => const YZTabBarWidget(),
+      '/bar/tabBarView': (context) => const YZTabBarViewWidget(),
+      '/bar/buttonBar': (context) => const YZButtonBarWidget(),
     };
   }
 
   // 配置button相关路由
-  Map<String, WidgetBuilder> getButtonMap() {
+  Map<String, WidgetBuilder> _getButtonMap() {
     return {
-      '/floatingActionButton': (context) =>
+      '/button/floatingActionButton': (context) =>
           const YZFloatingActionButtonWidget(),
-      '/elevatedButton': (context) => const YZElevatedButtonWidget(),
+      '/button/elevatedButton': (context) => const YZElevatedButtonWidget(),
+      '/button/textButton': (context) => const YZTextButtonWidget(),
+      '/button/iconButton': (context) => const YZIconButtonWidget(),
+      '/button/popupMenuButton': (context) => const YZPopupMenuButtonWidget(),
     };
   }
 
   // 登录路由
-  MaterialPageRoute loginRoute(RouteSettings settings) {
+  MaterialPageRoute _loginRoute(RouteSettings settings) {
     return MaterialPageRoute(
         builder: ((BuildContext context) => const Scaffold()));
   }
 
   // 拦截其他情况路由
-  MaterialPageRoute ohterRoute(RouteSettings settings) {
+  MaterialPageRoute _ohterRoute(RouteSettings settings) {
     return MaterialPageRoute(
         builder: ((BuildContext context) => const Scaffold()));
   }
