@@ -12,6 +12,11 @@ import 'package:my_app/elevatedButton.dart';
 import 'package:my_app/textButton.dart';
 import 'package:my_app/iconButton.dart';
 import 'package:my_app/popupMenuButtton.dart';
+import 'package:my_app/checkBox.dart';
+
+import 'package:my_app/textField.dart';
+import 'package:my_app/inputDecoration.dart';
+import 'package:my_app/focusNode.dart';
 
 class YZRouteManager {
   // 路由map表
@@ -25,6 +30,7 @@ class YZRouteManager {
     routeMap.addAll({'/': (context) => const YZRouteHomeWidget()});
     routeMap.addAll(_getBarRouteMap());
     routeMap.addAll(_getButtonMap());
+    routeMap.addAll(_getInputMap());
   }
 
 // ***************** public method ***************** //
@@ -79,6 +85,16 @@ class YZRouteManager {
       '/button/textButton': (context) => const YZTextButtonWidget(),
       '/button/iconButton': (context) => const YZIconButtonWidget(),
       '/button/popupMenuButton': (context) => const YZPopupMenuButtonWidget(),
+      '/button/checkBox': (context) => const YZCheckBoxWidget(),
+    };
+  }
+
+// 配置输入框相关路由
+  Map<String, WidgetBuilder> _getInputMap() {
+    return {
+      '/input/textField': (context) => const YZTextFieldWidget(),
+      '/input/inputDecoration': (context) => const YZInputDecorationWidget(),
+      '/input/focusNode': (context) => const YZFocusNodeWidget(),
     };
   }
 
