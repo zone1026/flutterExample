@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 class YZShowPickerWidget extends StatefulWidget {
@@ -45,8 +47,8 @@ class YZShowPickerWidgetState extends State<YZShowPickerWidget> {
         foregroundColor:
             MaterialStateProperty.resolveWith((states) => Colors.white),
       ),
-      onPressed: () {
-        showDatePicker(
+      onPressed: () async {
+        var date = await showDatePicker(
           context: context,
           // 日历初始化日期
           initialDate: DateTime.now(),
@@ -87,6 +89,7 @@ class YZShowPickerWidgetState extends State<YZShowPickerWidget> {
             return true;
           },
         );
+        print(date.toString());
       },
       child: const Text(
         'showDatePicker',
@@ -96,8 +99,8 @@ class YZShowPickerWidgetState extends State<YZShowPickerWidget> {
 
   ElevatedButton _showDatePickerThemeButton(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        showDatePicker(
+      onPressed: () async {
+        var date = await showDatePicker(
           context: context,
           initialDate: DateTime.now(),
           firstDate: DateTime(2020, 1, 1),
@@ -126,6 +129,9 @@ class YZShowPickerWidgetState extends State<YZShowPickerWidget> {
             );
           },
         );
+        if (date != null) {
+          print('year: ${date.year}, month: ${date.month}, day: ${date.day}');
+        }
       },
       child: const Text('showDatePickerThemeButton'),
     );
@@ -133,8 +139,8 @@ class YZShowPickerWidgetState extends State<YZShowPickerWidget> {
 
   ElevatedButton _showTimePickerButton(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        showTimePicker(
+      onPressed: () async {
+        var time = await showTimePicker(
           context: context,
           initialTime: TimeOfDay.now(),
           // 左上角文字
@@ -155,6 +161,9 @@ class YZShowPickerWidgetState extends State<YZShowPickerWidget> {
             );
           },
         );
+        if (time != null) {
+          print('hour: ${time.hour}, minute: ${time.minute}');
+        }
       },
       child: const Text('showTimePickerButton'),
     );
