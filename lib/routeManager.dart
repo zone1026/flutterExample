@@ -7,6 +7,7 @@ import 'package:my_app/tabBar.dart';
 import 'package:my_app/tabBarView.dart';
 import 'package:my_app/buttonBar.dart';
 import 'package:my_app/bottomSheet.dart';
+import 'package:my_app/snackBar.dart';
 
 import 'package:my_app/floatingActionButton.dart';
 import 'package:my_app/elevatedButton.dart';
@@ -28,6 +29,8 @@ import 'package:my_app/calenderDatePicker.dart';
 import 'package:my_app/cupertinoDatePicker.dart';
 import 'package:my_app/cupertinoTimerPicker.dart';
 import 'package:my_app/dialog.dart';
+import 'package:my_app/expansionPanel.dart';
+import 'package:my_app/chip.dart';
 
 class YZRouteManager {
   // 路由map表
@@ -86,6 +89,7 @@ class YZRouteManager {
       '/bar/tabBarView': (context) => const YZTabBarViewWidget(),
       '/bar/buttonBar': (context) => const YZButtonBarWidget(),
       '/bar/bottomSheet': (context) => const YZBottomSheetWidget(),
+      '/bar/snackBar': (context) => const YZSnackBarWidget(),
     };
   }
 
@@ -126,6 +130,8 @@ class YZRouteManager {
       '/widget/cupertinoTimerPicker': (context) =>
           const YZCupertinoTimerPickerWidget(),
       '/widget/dialog': (context) => const YZDialogWidget(),
+      '/widget/expansionPanel': (context) => const YZExpansionPanelWidget(),
+      '/widget/chip': (context) => const YZChipWidget(),
     };
   }
 
