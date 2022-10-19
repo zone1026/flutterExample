@@ -31,6 +31,10 @@ import 'package:my_app/cupertinoTimerPicker.dart';
 import 'package:my_app/dialog.dart';
 import 'package:my_app/expansionPanel.dart';
 import 'package:my_app/chip.dart';
+import 'package:my_app/tooltip.dart';
+import 'package:my_app/dataTable.dart';
+import 'package:my_app/card.dart';
+import 'package:my_app/progressIndicator.dart';
 
 class YZRouteManager {
   // 路由map表
@@ -132,6 +136,11 @@ class YZRouteManager {
       '/widget/dialog': (context) => const YZDialogWidget(),
       '/widget/expansionPanel': (context) => const YZExpansionPanelWidget(),
       '/widget/chip': (context) => const YZChipWidget(),
+      '/widget/tooltip': (context) => const YZTooltipWidget(),
+      '/widget/dataTable': (context) => const YZDataTableWidget(),
+      '/widget/card': (context) => const YZCardWidget(),
+      '/widget/progressIndicator': (context) =>
+          const YZProgressIndicatorWidget(),
     };
   }
 

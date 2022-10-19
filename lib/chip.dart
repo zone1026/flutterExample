@@ -34,7 +34,13 @@ class YZChipWidgetState extends State<YZChipWidget> {
             _chipForSimpleText(),
             _chipForSimple(),
             _chipForNormal(),
-            _chip()
+            _chip(),
+            const Padding(padding: EdgeInsets.only(top: 30.0)),
+            _actionChip(),
+            const Padding(padding: EdgeInsets.only(top: 30.0)),
+            _choiceChip(),
+            const Padding(padding: EdgeInsets.only(top: 30.0)),
+            _filterChip(),
           ],
         ),
       ),
@@ -129,6 +135,90 @@ class YZChipWidgetState extends State<YZChipWidget> {
         alignment: Alignment.center,
         child: const Icon(Icons.favorite),
       ),
+    );
+  }
+
+  // 可点击的chip
+  // 相比 Chip，ActionChip 增加了 onPressed 的点击事件，同时 ActionChip 移除了 deleteIcon 等相关属性。
+  ActionChip _actionChip() {
+    return ActionChip(
+      // 左侧图标组件
+      avatar: _circleAvatar(),
+      label: const Text('Action Chip'),
+      // 文本样式
+      labelStyle: const TextStyle(fontSize: 18.0, color: Colors.green),
+      // 文本外边距 Padding
+      labelPadding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
+      onPressed: () {
+        print('click action chip');
+      },
+      // Chip 形状
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15.0),
+        side: const BorderSide(width: 2.0, color: Colors.red),
+      ),
+      elevation: 10.0,
+      shadowColor: Colors.yellow,
+    );
+  }
+
+  bool _choiceSelected = true;
+  ChoiceChip _choiceChip() {
+    return ChoiceChip(
+      avatar: _circleAvatar(),
+      label: const Text('Choice Chip'),
+      // 文本样式
+      labelStyle: const TextStyle(fontSize: 18.0, color: Colors.green),
+      // 文本外边距 Padding
+      labelPadding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
+
+      // disabledColor: Colors.green,
+      // 背景颜色，可以作为非选中时的颜色展示
+      backgroundColor: Colors.yellow,
+      selected: _choiceSelected,
+      selectedColor: Colors.red,
+      onSelected: (value) {
+        _choiceSelected = value;
+        setState(() {});
+      },
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25.0),
+        side: const BorderSide(width: 2.0, color: Colors.yellow),
+      ),
+    );
+  }
+
+  bool _filterChipSelected = false;
+  FilterChip _filterChip() {
+    return FilterChip(
+      avatar: _circleAvatar(),
+      label: const Text('Filter Chip'),
+      // 文本样式
+      labelStyle: const TextStyle(fontSize: 18.0, color: Colors.green),
+      // 文本外边距 Padding
+      labelPadding: const EdgeInsets.fromLTRB(15.0, 15.0, 15.0, 15.0),
+
+      // 背景颜色，可以作为非选中时的颜色展示
+      backgroundColor: Colors.yellow,
+      selected: _filterChipSelected,
+      selectedColor: Colors.red,
+      onSelected: (value) {
+        _filterChipSelected = value;
+        setState(() {});
+      },
+      // 是否显示勾选框
+      showCheckmark: true,
+      checkmarkColor: Colors.green,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(25.0),
+        side: BorderSide(
+          color: (_filterChipSelected ? Colors.yellow : Colors.red),
+          width: 3.0,
+        ),
+      ),
+      shadowColor: Colors.red,
+      selectedShadowColor: Colors.yellow,
+      elevation: 10.0,
     );
   }
 }
