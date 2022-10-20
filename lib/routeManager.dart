@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 
 import 'package:my_app/route.dart';
@@ -13,10 +15,12 @@ import 'package:my_app/floatingActionButton.dart';
 import 'package:my_app/elevatedButton.dart';
 import 'package:my_app/textButton.dart';
 import 'package:my_app/iconButton.dart';
-import 'package:my_app/popupMenuButtton.dart';
+import 'package:my_app/popupMenuButton.dart';
 import 'package:my_app/checkBox.dart';
 import 'package:my_app/radio.dart';
 import 'package:my_app/switch.dart';
+import 'package:my_app/cupertinoButton.dart';
+import 'package:my_app/cupertinoSwitch.dart';
 
 import 'package:my_app/textField.dart';
 import 'package:my_app/inputDecoration.dart';
@@ -35,6 +39,12 @@ import 'package:my_app/tooltip.dart';
 import 'package:my_app/dataTable.dart';
 import 'package:my_app/card.dart';
 import 'package:my_app/progressIndicator.dart';
+import 'package:my_app/listTile.dart';
+import 'package:my_app/stepper.dart';
+import 'package:my_app/divider.dart';
+import 'package:my_app/cupertinoActivityIndicator.dart';
+import 'package:my_app/cupertinoAlertDialog.dart';
+import 'package:my_app/cupertinoNavigationBar.dart';
 
 class YZRouteManager {
   // 路由map表
@@ -109,6 +119,8 @@ class YZRouteManager {
       '/button/checkBox': (context) => const YZCheckBoxWidget(),
       '/button/radio': (context) => const YZRadioWidget(),
       '/button/switch': (context) => const YZSwitchWidget(),
+      '/button/cupertinoButton': (context) => const YZCupertinoButtonWidget(),
+      '/button/cupertinoSwitch': (context) => const YZCupertinoSwitchWidget(),
     };
   }
 
@@ -141,6 +153,15 @@ class YZRouteManager {
       '/widget/card': (context) => const YZCardWidget(),
       '/widget/progressIndicator': (context) =>
           const YZProgressIndicatorWidget(),
+      '/widget/listTile': (context) => const YZListTileWidget(),
+      '/widget/stepper': (context) => const YZStepperWidget(),
+      '/widget/divider': (context) => const YZDividerWidget(),
+      '/widget/cupertinoActivityIndicator': (context) =>
+          const YZCupertinoActivityIndicatorWidget(),
+      '/widget/cupertinoAlertDialog': (context) =>
+          const YZCupertinoAlertDialogWidget(),
+      '/widget/cupertinoNavigationBar': (context) =>
+          const YZCupertinoNavigationBarWidget(),
     };
   }
 

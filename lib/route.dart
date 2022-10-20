@@ -44,9 +44,11 @@ class YZRouteHomeState extends State<YZRouteHomeWidget> {
           "Route",
         ),
       ),
-      body: Material(
-        color: Colors.white,
-        child: SafeArea(child: _listView()),
+      body: Scrollbar(
+        child: Material(
+          color: Colors.white,
+          child: SafeArea(child: _listView()),
+        ),
       ),
     );
   }
