@@ -1,7 +1,6 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:get/route_manager.dart';
 
 class YZBottomNavigationBarWidget extends StatefulWidget {
   const YZBottomNavigationBarWidget({Key? key}) : super(key: key);
@@ -11,12 +10,21 @@ class YZBottomNavigationBarWidget extends StatefulWidget {
 }
 
 class YZBottomNavigationBarState extends State<YZBottomNavigationBarWidget> {
+  final PageController pageController =
+      PageController(initialPage: 0, keepPage: true);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('BottomNavigationBar')),
       bottomNavigationBar: _bottomNavigationBar(),
-      body: Container(),
+      body: PageView(
+        controller: pageController,
+        children: [
+          Container(),
+          YZBottomNavigationBarPushWidget(),
+          YZBottomNavigationBarPushWidget()
+        ],
+      ),
     );
   }
 
@@ -39,6 +47,7 @@ class YZBottomNavigationBarState extends State<YZBottomNavigationBarWidget> {
       ],
       onTap: (int index) {
         print('select item index $index');
+        pageController.jumpToPage(index);
         _selectedIndex = index;
         setState(() {});
       },
@@ -61,6 +70,23 @@ class YZBottomNavigationBarState extends State<YZBottomNavigationBarWidget> {
       iconSize: 44.0,
       // showUnselectedLabels: true,
       // showSelectedLabels: false,
+    );
+  }
+}
+
+class YZBottomNavigationBarPushWidget extends StatelessWidget {
+  YZBottomNavigationBarPushWidget({Key? key}) : super(key: key);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'YZBottomNavigationBarPushWidget',
+        ),
+      ),
+      body: Container(
+        color: Colors.red,
+      ),
     );
   }
 }

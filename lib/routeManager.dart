@@ -10,6 +10,9 @@ import 'package:my_app/tabBarView.dart';
 import 'package:my_app/buttonBar.dart';
 import 'package:my_app/bottomSheet.dart';
 import 'package:my_app/snackBar.dart';
+import 'package:my_app/cupertinoNavigationBar.dart';
+import 'package:my_app/cupertinoTabBar.dart';
+import 'package:my_app/cupertinoPageScaffold.dart';
 
 import 'package:my_app/floatingActionButton.dart';
 import 'package:my_app/elevatedButton.dart';
@@ -44,7 +47,8 @@ import 'package:my_app/stepper.dart';
 import 'package:my_app/divider.dart';
 import 'package:my_app/cupertinoActivityIndicator.dart';
 import 'package:my_app/cupertinoAlertDialog.dart';
-import 'package:my_app/cupertinoNavigationBar.dart';
+import 'package:my_app/cupertinoTabScaffold.dart';
+import 'package:my_app/stack.dart';
 
 class YZRouteManager {
   // 路由map表
@@ -104,6 +108,11 @@ class YZRouteManager {
       '/bar/buttonBar': (context) => const YZButtonBarWidget(),
       '/bar/bottomSheet': (context) => const YZBottomSheetWidget(),
       '/bar/snackBar': (context) => const YZSnackBarWidget(),
+      '/widget/cupertinoNavigationBar': (context) =>
+          const YZCupertinoNavigationBarWidget(),
+      '/widget/cupertinoTabBar': (context) => const YZCupertinoTabBarWidget(),
+      '/widget/cupertinoPageScaffold': (context) =>
+          const YZCupertinoPageScaffoldWidget(),
     };
   }
 
@@ -160,8 +169,9 @@ class YZRouteManager {
           const YZCupertinoActivityIndicatorWidget(),
       '/widget/cupertinoAlertDialog': (context) =>
           const YZCupertinoAlertDialogWidget(),
-      '/widget/cupertinoNavigationBar': (context) =>
-          const YZCupertinoNavigationBarWidget(),
+      '/widget/cupertinoTabScaffold': (context) =>
+          const YZCupertinoTabScaffoldWidget(),
+      '/widget/stack': (context) => const YZStackWidget(),
     };
   }
 
