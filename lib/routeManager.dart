@@ -49,6 +49,16 @@ import 'package:my_app/cupertinoActivityIndicator.dart';
 import 'package:my_app/cupertinoAlertDialog.dart';
 import 'package:my_app/cupertinoTabScaffold.dart';
 import 'package:my_app/stack.dart';
+import 'package:my_app/gridView.dart';
+import 'package:my_app/sliverList.dart';
+import 'package:my_app/sliverFixedExtentList.dart';
+import 'package:my_app/sliverGrid.dart';
+import 'package:my_app/sliverPadding.dart';
+import 'package:my_app/sliverAppBar.dart';
+import 'package:my_app/sliverPersistentHeader.dart';
+import 'package:my_app/sliverToBoxAdapter.dart';
+import 'package:my_app/sliverFillViewport.dart';
+import 'package:my_app/sliverFillRemaining.dart';
 
 class YZRouteManager {
   // 路由map表
@@ -172,6 +182,21 @@ class YZRouteManager {
       '/widget/cupertinoTabScaffold': (context) =>
           const YZCupertinoTabScaffoldWidget(),
       '/widget/stack': (context) => const YZStackWidget(),
+      '/widget/gridView': (context) => const YZGridViewWidget(),
+      '/widget/sliverList': (context) => const YZSliverListWidget(),
+      '/widget/sliverFixedExtentList': (context) =>
+          const YZSliverFixedExtentListWidget(),
+      '/widget/sliverGrid': (context) => const YZSliverGradWidget(),
+      '/widget/sliverPadding': (context) => const YZSliverPaddingWidget(),
+      '/widget/sliverAppBar': (context) => const YZSliverAppBarWidget(),
+      '/widget/sliverPersistentHeader': (context) =>
+          const YZSliverPersistentHeaderWidget(),
+      '/widget/sliverToBoxAdapterWidget': (context) =>
+          const YZSliverToBoxAdapterWidget(),
+      '/widget/sliverFillViewport': (context) =>
+          const YZSliverFillViewprotWidget(),
+      '/widget/sliverFillRemaining': (context) =>
+          const YZSliverFillRemainingWidget(),
     };
   }
 
