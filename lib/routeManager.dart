@@ -50,6 +50,8 @@ import 'package:my_app/cupertinoAlertDialog.dart';
 import 'package:my_app/cupertinoTabScaffold.dart';
 import 'package:my_app/stack.dart';
 import 'package:my_app/gridView.dart';
+import 'package:my_app/customScrollView.dart';
+import 'package:my_app/nestedScrollView.dart';
 import 'package:my_app/sliverList.dart';
 import 'package:my_app/sliverFixedExtentList.dart';
 import 'package:my_app/sliverGrid.dart';
@@ -183,6 +185,8 @@ class YZRouteManager {
           const YZCupertinoTabScaffoldWidget(),
       '/widget/stack': (context) => const YZStackWidget(),
       '/widget/gridView': (context) => const YZGridViewWidget(),
+      '/widget/customScrollView': (context) => const YZCustomScrollViewWidget(),
+      '/widget/nestedScrollView': (context) => const YZNestedScrollViewWidget(),
       '/widget/sliverList': (context) => const YZSliverListWidget(),
       '/widget/sliverFixedExtentList': (context) =>
           const YZSliverFixedExtentListWidget(),
