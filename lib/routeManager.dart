@@ -61,6 +61,10 @@ import 'package:my_app/sliverPersistentHeader.dart';
 import 'package:my_app/sliverToBoxAdapter.dart';
 import 'package:my_app/sliverFillViewport.dart';
 import 'package:my_app/sliverFillRemaining.dart';
+import 'package:my_app/intrinsic.dart';
+import 'package:my_app/showAndHide.dart';
+
+import 'package:my_app/painter.dart';
 
 class YZRouteManager {
   // 路由map表
@@ -76,6 +80,7 @@ class YZRouteManager {
     routeMap.addAll(_getButtonMap());
     routeMap.addAll(_getInputMap());
     routeMap.addAll(_getWidgetMap());
+    routeMap.addAll(_getAnimationMap());
   }
 
 // ***************** public method ***************** //
@@ -201,6 +206,15 @@ class YZRouteManager {
           const YZSliverFillViewprotWidget(),
       '/widget/sliverFillRemaining': (context) =>
           const YZSliverFillRemainingWidget(),
+      '/widget/intrinsic': (context) => const YZIntrinsicWidget(),
+      '/widget/showAndHide': (context) => const YZShowAndHideWidget(),
+    };
+  }
+
+  // 配置animation相关路由
+  Map<String, WidgetBuilder> _getAnimationMap() {
+    return {
+      '/animation/painter': (context) => const YZPainterWidget(),
     };
   }
 
