@@ -63,6 +63,7 @@ import 'package:my_app/sliverFillViewport.dart';
 import 'package:my_app/sliverFillRemaining.dart';
 import 'package:my_app/intrinsic.dart';
 import 'package:my_app/showAndHide.dart';
+import 'package:my_app/box.dart';
 
 import 'package:my_app/painter.dart';
 
@@ -208,6 +209,7 @@ class YZRouteManager {
           const YZSliverFillRemainingWidget(),
       '/widget/intrinsic': (context) => const YZIntrinsicWidget(),
       '/widget/showAndHide': (context) => const YZShowAndHideWidget(),
+      '/widget/box': (context) => const YZBoxWidget(),
     };
   }
 

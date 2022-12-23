@@ -25,7 +25,7 @@ class _YZhowAndHideState extends State<YZShowAndHideWidget> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('title'),
+        title: const Text('Widget Show and Hide'),
       ),
       body: Center(
         child: Column(
