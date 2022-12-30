@@ -64,6 +64,14 @@ import 'package:my_app/sliverFillRemaining.dart';
 import 'package:my_app/intrinsic.dart';
 import 'package:my_app/showAndHide.dart';
 import 'package:my_app/box.dart';
+import 'package:my_app/transform.dart';
+import 'package:my_app/customSingleChildLayout.dart';
+import 'package:my_app/indexedStack.dart';
+import 'package:my_app/flow.dart';
+import 'package:my_app/table.dart';
+import 'package:my_app/wrap.dart';
+import 'package:my_app/listBody.dart';
+import 'package:my_app/customMultiChildLayout.dart';
 
 import 'package:my_app/painter.dart';
 
@@ -210,6 +218,16 @@ class YZRouteManager {
       '/widget/intrinsic': (context) => const YZIntrinsicWidget(),
       '/widget/showAndHide': (context) => const YZShowAndHideWidget(),
       '/widget/box': (context) => const YZBoxWidget(),
+      '/widget/transform': (context) => const YZTransformWidget(),
+      '/widget/customSingleChildLayout': (context) =>
+          const YZCustomSingleChildLayoutWidget(),
+      '/widget/indexedStack': (context) => const YZIndexedStackWidget(),
+      '/widget/flow': (context) => const YZFlowWidget(),
+      '/widget/table': (context) => const YZTableWidget(),
+      '/widget/wrap': (context) => const YZWrapWidget(),
+      '/widget/listBody': (context) => const YZListBodyWidget(),
+      '/widget/customMultiChildLayout': (context) =>
+          const YZCustomMultiChildLayoutWidget(),
     };
   }
 
