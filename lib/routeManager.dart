@@ -72,6 +72,12 @@ import 'package:my_app/table.dart';
 import 'package:my_app/wrap.dart';
 import 'package:my_app/listBody.dart';
 import 'package:my_app/customMultiChildLayout.dart';
+import 'package:my_app/builder.dart';
+import 'package:my_app/notificationListener.dart';
+import 'package:my_app/draggableScrollable.dart';
+import 'package:my_app/draggable.dart';
+import 'package:my_app/dragTarget.dart';
+import 'package:my_app/longPressDraggable.dart';
 
 import 'package:my_app/painter.dart';
 
@@ -228,6 +234,15 @@ class YZRouteManager {
       '/widget/listBody': (context) => const YZListBodyWidget(),
       '/widget/customMultiChildLayout': (context) =>
           const YZCustomMultiChildLayoutWidget(),
+      '/widget/builder': (context) => const YZBuilderWidget(),
+      '/widget/notificationListener': (context) =>
+          const YZNotificationListenerWidget(),
+      '/widget/draggableScrollable': (context) =>
+          const YZDraggableScrollableWidget(),
+      '/widget/draggable': (context) => const YZDraggableWidget(),
+      '/widget/dragTarget': (context) => const YZDragTargetWidget(),
+      '/widget/longPressDraggable': (context) =>
+          const YZLongPressDraggableWidget(),
     };
   }
 

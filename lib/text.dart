@@ -56,7 +56,7 @@ class YZTextWidget extends StatelessWidget {
             padding: EdgeInsets.only(top: 8.0),
           ),
           Text(
-            "hello, world hello, worldhello, worldhello, worldhello, worldhello, worldhello, worldhello, worldhello, worldhello, world",
+            "hello, world hello, world hello, worldhello, worldhello, worldhello, worldhello, worldhello, worldhello, worldhello, world",
             textAlign: TextAlign.left,
             softWrap: true,
             // maxLines: 2,
@@ -101,6 +101,13 @@ class YZTextWidget extends StatelessWidget {
                 fontSize: 20,
               ),
               children: [
+                WidgetSpan(
+                  child: Image.asset(
+                    'assets/images/icon_phone.png',
+                    width: 40.0,
+                    height: 40.0,
+                  ),
+                ),
                 TextSpan(
                   text: "hello, world",
                   style: const TextStyle(

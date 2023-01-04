@@ -12,6 +12,7 @@ class YZRouteAppWidget extends StatelessWidget {
     return MaterialApp(
       title: 'Route',
       theme: ThemeData(primarySwatch: Colors.yellow),
+      debugShowCheckedModeBanner: false,
       // home: const YZRouteHomeWidget(),
       initialRoute: '/',
       routes: manager.routeMap,
