@@ -78,6 +78,7 @@ import 'package:my_app/draggableScrollable.dart';
 import 'package:my_app/draggable.dart';
 import 'package:my_app/dragTarget.dart';
 import 'package:my_app/longPressDraggable.dart';
+import 'package:my_app/state.dart';
 
 import 'package:my_app/painter.dart';
 
@@ -243,6 +244,7 @@ class YZRouteManager {
       '/widget/dragTarget': (context) => const YZDragTargetWidget(),
       '/widget/longPressDraggable': (context) =>
           const YZLongPressDraggableWidget(),
+      '/widget/state': (context) => const YZPageStateWidget(),
     };
   }
 
